@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo3.png">
+   <style>
+   body{
+    
+background-color:  #00004d;
+color: white;
+
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#glowny{
+    
+width:1280px ;
+height:1172px ;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+border: 1px black solid; 
+}
+
+#menu{
+    width:1280px  ;
+    height:60px ;
+clear: both;
+background-color: #292c2a;
+border: 2px solid #ffd700;
+}
+#ban{
+    margin: auto;
+    padding: auto;
+    width:1280px; 
+    height:300px;
+}
+
+#sekcja{
+    width:100% ;
+    height: 1000px;
+    background-color: #292c2a;
+    float: left;
+    border: 2px solid #ffd700;
+ 
+}
+
+
+
+
+#stopka{
+    width:1280px  ;
+    height:70px ;
+clear: both;
+background-color: #292c2a;
+border: 2px solid #ffd700;
+    
+}
+.dane{
+    width:240px  ;
+    height:240px ;
+    float: left;
+    margin: 20px 20px 20px 20px;
+    background-color: whitesmoke;
+    border: 2px solid #ffd700;
+    color: black;
+    font-size: 15px;
+  
+}
+.galeria{
+    font-size: 15px;
+    width:220px  ;
+    height:220px ;
+    border: 1px solid black;
+
+}
+
+#mm{
+width: 120px;
+height: 30px;
+margin: 10px 10px 10px 10px;
+padding: 5px 5px 5px 5px;
+border: 1px ;
+border-radius: 2px;
+background-color: black;
+color: white;
+
+font-size: 14px;
+text-align: center;
+font-weight: bold;
+border: 2px solid #ffd700;
+}
+#mm:hover{
+background-color:#a0a0a0 ;
+border: 2px solid #ffd700;
+color:  black;
+transform: scale(1.5);
+
+text-align: center;
+font-weight: bold;
+}
+
+
+.dane:hover{
+
+    transform: scale(2);
+    background-color: gray	 ;
+    color: white;
+}
+
+#w1,#w2, #w3{
+    clear: both;
+    margin-left: 66px;
+    margin-top: 50px;
+}
+   </style>
+  
+    <title>Zespół</title>
+  <script>
+  
+
+function galeria(){
+    window.location.href = 'galeria.html';
+}
+function forum(){
+    window.location.href = 'forum.html';}
+  </script>
+
+</head>
+<body>
+    <center>
+                <div id="glowny">
+              
+    <div id="menu">
+        <a href="index.html"><img src="ii.png" style="height: 25px; width: 25px; background-color: white;" alt="Strona główna"></a>
+
+        <button id="mm" onclick="galeria()">Galeria</button>
+        
+        <button  id="mm" onclick="forum()">Forum</button>
+        
+    </div>
+        <div id="sekcja">
+            <center><h1>Nasz zespół:</h1></center>
+            
+             <div id="w1">
+                        <div class="dane" id="dane11">
+                            <center>Jarosław Hampel- Kapitan</center>
+                            <img src="hampel.png" class="galeria" alt="Zdjęcie-1">
+                       
+                        </div>
+                        <div class="dane" id="dane12">
+                            <center>Bartosz Zmarzlik</center>
+                            <img src="zmarzlik.jpg" class="galeria" alt="Zdjęcie-2">
+                           
+                        </div>
+                        <div class="dane" id="dane13">
+                            <center>Frederik Lindgren</center>
+                            <img src="lindren.jpg" class="galeria" alt="Zdjęcie-3">
+                            
+
+                        </div>
+                        <div class="dane" id="dane14">
+                            <center>Mateusz Cierniak</center>
+                            <img src="cierniak.jpg" class="galeria" alt="Zdjęcie-4">
+                        
+                        </div>
+                    </div>
+
+                    <div id="w2">
+                        <div class="dane" id="dane21">
+                            <center>Dominik Kubera</center>
+                            <img src="kubera.png" class="galeria" alt="Zdjęcie-5">
+                    
+                        </div>
+                        <div class="dane" id="dane22">
+                            <center>Kacper Grzelak</center>
+                            <img src="grzelak.jpg" class="galeria" alt="Zdjęcie-6">
+                         
+                        </div>
+                        <div class="dane" id="dane23">
+                            <center>Jack Holder</center>
+                            <img src="holder.jpg" class="galeria" alt="Zdjęcie-7">
+                          
+
+                        </div>
+                        <div class="dane" id="dane24">
+                            <center>Bartosz Bańbor</center>
+                            <img src="banbor.jpg" class="galeria" alt="Zdjęcie-8">
+                     
+                                               </div>
+                    </div>
+                        <div id="w3">
+                            <div class="dane" id="dane31">
+                                <center>Maciej Kuciapa- Trener</center>
+                                <img src="kuciapa.jpg" class="galeria" alt="Zdjęcie-9">
+                        
+                            </div>
+                           
+                        </div>
+        </div>
+        
+    
+                        
+
+
+
+
+
+        
+            
+    <div id="stopka">
+        <br/>
+    <center>Autor: Marek Dobrowolski IMED 4.1.1</center>
+    </div>
+
+                </div>
+            </center>
+</body>
+</html>

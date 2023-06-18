@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo3.png">
+    <title>Galeria Zdjęć</title>
+    <style>
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            clear: both;
+            column-gap:20px;
+        }
+        img{
+            width:700px ;
+            height: 400px;
+        }
+        .gallery img {
+            width: 900px;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .wiersz {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 12px;
+            
+        }
+        
+        .wiersz img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.7s;
+            cursor: pointer;
+        
+        }
+        
+        .wiersz img:hover {
+            transform: scale(1.5);
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            clear: both;
+        }
+        
+        .button {
+            margin: 0 5px;
+        }
+        #gg{
+            width:500px ;
+            height: 300px;
+        }
+        body{
+background-color: #00004d;
+color: white;
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#mm{
+width: 120px;
+height: 30px;
+margin: 10px 10px 10px 10px;
+padding: 5px 5px 5px 5px;
+border: 1px ;
+border-radius: 2px;
+background-color: black;
+color: white;
+
+font-size: 14px;
+text-align: center;
+font-weight: bold;
+border: 2px solid #ffd700;
+}
+#mm:hover{
+background-color:#a0a0a0 ;
+border: 2px solid #ffd700;
+color:  black;
+transform: scale(1.5);
+text-align: center;
+font-weight: bold;
+
+}
+#gl{
+clear: both;
+width: 100%;
+height: 300px;
+
+}
+    </style>
+</head>
+<body>
+    <br/><br/>
+    <h1>Galeria zdjęć!</h1> <br/>
+    <a href="index.html"><img src="ii.png" style="height: 30px; width: 30px; background-color: white;" alt="Strona główna"></a> 
+   <button  id="mm" onclick="forum()">Forum</button>
+        <button  id="mm" onclick="zespol()" >Nasz zespół</button>
+        <hr>
+
+
+    <div class="gallery">
+        <img src="1.jpg" alt="Zdjęcie 1" id="image">
+    </div>
+        <div class="button-container">
+            <button class="button" id="mm" onclick="previousImage()">Cofnij</button>
+            <button class="button"  id="mm" onclick="nextImage()">Następne</button>
+        </div>
+        <hr>
+   
+
+    
+    <div class="wiersz">
+        <div class="thumbnail" onclick="changeImage(0)">
+            <img src="1.jpg" id="gg" alt="Zdjęcie 1">
+        </div>
+        <div class="thumbnail" onclick="changeImage(1)">
+            <img src="2.jpg" id="gg" alt="Zdjęcie 2">
+        </div>
+        <div class="thumbnail" onclick="changeImage(2)">
+            <img src="3.jpg" id="gg" alt="Zdjęcie 3">
+        </div>
+        <div class="thumbnail" onclick="changeImage(3)">
+            <img src="4.jpg" id="gg" alt="Zdjęcie 4">
+        </div>
+        <div class="thumbnail" onclick="changeImage(4)">
+            <img src="5.jpg" id="gg" alt="Zdjęcie 5">
+        </div>
+        <div class="thumbnail" onclick="changeImage(5)">
+            <img src="6.jpg" id="gg" alt="Zdjęcie 6">
+        </div>
+        <div class="thumbnail" onclick="changeImage(6)">
+            <img src="7.jpg" id="gg" alt="Zdjęcie 7">
+        </div>
+        <div class="thumbnail" onclick="changeImage(7)">
+            <img src="8.jpg" id="gg" alt="Zdjęcie 8">
+        </div>
+        <div class="thumbnail" onclick="changeImage(8)">
+            <img src="9.jpg" id="gg" alt="Zdjęcie 9">
+        </div>
+        <div class="thumbnail" onclick="changeImage(9)">
+            <img src="10.jpg" id="gg" alt="Zdjęcie 10">
+        </div>
+        <div class="thumbnail" onclick="changeImage(10)">
+            <img src="11.jpg" id="gg" alt="Zdjęcie 11">
+        </div>
+        <div class="thumbnail" onclick="changeImage(11)">
+            <img src="12.jpg" id="gg" alt="Zdjęcie 12">
+        </div>
+        
+        <div class="thumbnail" onclick="changeImage(14)">
+            <img src="15.jpg" id="gg" alt="Zdjęcie 15">
+        </div>
+        <div class="thumbnail" onclick="changeImage(15)">
+            <img src="16.jpg" id="gg" alt="Zdjęcie 16">
+        </div>
+    </div>
+    <br/> <br/><br/>
+<hr>
+    <div id="stopka"> Autor strony: Marek Dobrowolski IMED 4.1.1</div>
+    <br/> <br/><br/>
+    <hr> 
+    <script>
+        function zespol(){
+    window.location.href = 'zespol.html';
+}
+
+
+function forum(){
+    window.location.href = 'forum.html';}
+        const images = [
+            '1.jpg',
+            '2.jpg',
+            '3.jpg',
+            '4.jpg',
+            '5.jpg',
+            '6.jpg',
+            '7.jpg',
+            '8.jpg',
+            '9.jpg',
+            '10.jpg',
+            '11.jpg',
+            '12.jpg',
+            '15.jpg',
+            '16.jpg'
+        ];
+        
+        let currentIndex = 0;
+        const imageElement = document.getElementById('image');
+        
+        function changeImage(index) {
+            currentIndex = index;
+            imageElement.src = images[currentIndex];
+        }
+        
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageElement.src = images[currentIndex];
+        }
+        
+        function previousImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            imageElement.src = images[currentIndex];
+        }
+        
+        function autoChangeImage() {
+            nextImage();
+        }
+        
+        setInterval(autoChangeImage, 5000);
+    </script>
+</body>
+</html>

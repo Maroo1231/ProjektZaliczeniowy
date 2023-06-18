@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo3.png">
+    <title>Motor Lublin</title>
+    <script src="javka.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="glowny">
+    <div id="baner">
+        <center>
+        <img src="baner.png" alt="banerek" style="height: 250px; width: 1000px;" >
+        </center>
+    </div>
+    <div id="menu">
+        <center>
+        <button id="mm" onclick="galeria()">Galeria</button>
+        <button  id="mm" onclick="zespol()" >Nasz zespół</button>
+        <button  id="mm" onclick="forum()">Forum</button>
+        </center>
+
+    </div>
+        <div id="spons">
+
+            <center>
+            <SCRIPT language="JavaScript">
+              
+                Message = "Nasi sponsorzy:  Platinum OrlenOIL, Perła, PKO Bank Polski, Grupa Azoty, Canal+, Lotto, BMW Best Auto, Miasto Lublin, Bogdanka";
+                Size = 400;
+                Pos=Size;
+                Speed = 0.1;
+                
+                function Banner() 
+                {
+                   Spaces = "";
+                   for (count=0; count<Pos; count++) 
+                      Spaces+= " ";
+                   if (Pos < 1) 
+                   {
+                      document.Banner.Bar.value = Message.substring(Math.abs(Pos), Message.length);
+                      if (Pos+Message.length < 1)
+                         {Pos = Size;}
+                   } 
+                   else 
+                      document.Banner.Bar.value = Spaces + Message;
+                   Pos-=Speed;
+                   setTimeout('Banner();', 15);
+                }
+               
+                </SCRIPT>
+                
+                <FORM NAME=Banner>
+                <INPUT Size=50 Name=Bar id="bar" Value="">
+                </FORM>
+                <script>Banner();</script>
+       
+
+            </center>
+    </div>
+    <div id="lewe">
+<br /> <br />
+<center><h3>Terminarz</h3></center>
+<center><img src="kk.jpg" id="kk" alt="Terminarz" ></center>
+    
+<br /> <br />
+<center><h3>Nasze media społecznościowe</h3></center>
+<center>
+
+   <img src="fb.png" id="med" alt="fb"> <a href="https://www.facebook.com/platinummotorlublin" target="_blank" </a>
+    <img src="in.jpg" id="med" alt="in"> <a href="https://www.instagram.com/platinummotorlublin/" target="_blank"</a>
+        <img src="tw.png" id="med" alt="tw"> <a href="https://twitter.com/motorlublinpgee"target="_blank" </a>
+
+    </a>  
+</center>
+<center><h3>Nasz stadion</h3>
+<img src="ss.jpg" id="ss" style="height: 200px; width:500px ;">
+</center>
+<br />
+<center>Adres: Aleje Zygmuntowskie 5, 20-101 Lublin</center>
+</div>
+    <div id="srodek">
+
+     <center><h2>Informacje</h2></center>
+     <hr>
+<br/>
+Motor Lublin to polski klub żużlowy z Lublina, założony w 1978 roku. Klub występuje w rozgrywkach polskiej Ekstraligi żużlowej, najwyższej klasy rozgrywkowej w Polsce.
+Oto kilka informacji o Motorze Lublin w żużlu:
+<ol>
+<li>Sukcesy: Motor Lublin odnosił wiele sukcesów w swojej historii. Klub zdobył kilkukrotnie tytuł drużynowego mistrza Polski, w tym w latach 1982, 1983, 1985, 1987, 1988 , 1991 i 2022.
+</li>
+<li>
+Barwy klubowe: Motor Lublin ma charakterystyczne barwy klubowe - żółto-niebieskie. Te kolory widoczne są zarówno na strojach zawodników, jak i na klubowych flagach i symbolach.
+</li>
+<li>
+Rivalizacje: Klub Motor Lublin ma swoje silne rywalizacje z innymi drużynami żużlowymi w Polsce, takimi jak Unia Tarnów, Stal Gorzów Wielkopolski czy Falubaz Zielona Góra. Mecze pomiędzy tymi drużynami często przyciągają dużą publiczność i są obiektem zainteresowania fanów żużla.
+</li><li>
+Rozgrywki: Motor Lublin bierze udział w polskiej Ekstralidze żużlowej, gdzie rywalizuje z innymi czołowymi drużynami w kraju. Sezon żużlowy trwa zwykle od wiosny do jesieni i składa się z rundy zasadniczej oraz rundy play-off, w której drużyny walczą o mistrzostwo.
+</li>
+</ol>
+Motor Lublin cieszy się dużym poparciem lokalnych fanów i ma swoje miejsce w historii polskiego żużla. Klub kontynuuje tradycje żużlowe w Lublinie i reprezentuje miasto na arenie krajowej.
+<br/><br/>
+<hr>  
+<center><h2>Motor Lublin Aktualny Mistrz Polski</h2></center>
+<hr>
+<br/>
+Sezon 2022 na zawsze zapisze się w historii sportu żużlowego w Lublinie jako wyjątkowy niezależnie od sukcesów jakie Motor osiągnie w przyszłości. Lubelska drużyna po raz kolejny napisała na naszych oczach niesamowitą historię. Żadnej drużynie wcześniej nie udało się wywalczyć w jednym sezonie Mistrzostwa Polski Par Klubowych w kategorii zarówno juniorów jak i seniorów. Motor Lublin dokonał tego wyczynu w sezonie 2022.
+
+Złoty sezon Motoru to również Drużynowe Mistrzostwo Polski Juniorów ale przede wszystkim wygrana w finałowym dwumeczu PGE Ekstraligi i wywalczenie pierwszego w historii klubu z Lublina Drużynowego Mistrzostwa Polski. Motor sezon zasadniczy przeszedł jak burza. Dość powiedzieć, że przez pierwsze dwanaście meczów Koziołki nie znalazły pogromcy. Dopiero w meczu 13 kolejki Motor zanotował na torze w Częstochowie pierwszą porażkę.
+<br/>
+
+
+
+</div>
+    <div id="prawe">
+        <center><h3>Aktualna tabela ligowa</h3></center>
+        <table id="ligowa-tabela">
+            <thead>
+                <tr>
+                    <th>Nr</th>
+                    <th>Drużyna</th>
+                    <th>M</th>
+                    <th>Z</th>
+                    <th>R</th>
+                    <th>P</th>
+                    <th>Pkt</th>
+                </tr>
+            </thead>
+            <tbody id="ligowa-tabela-body">
+                
+            </tbody>
+        </table>
+      
+        
+    </div>
+ 
+    <div id="stopka"> Autor strony: Marek Dobrowolski IMED 4.1.1</div>
+
+</div>
+
+</body>
+</html>

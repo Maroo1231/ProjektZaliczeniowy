@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum - Logowanie i Rejestracja</title>
+ <link rel="icon" href="logo3.png">
+ <style>
+
+body{
+background-color: #00004d;
+color: white;
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#mm{
+width: 120px;
+height: 30px;
+margin: 10px 10px 10px 10px;
+padding: 5px 5px 5px 5px;
+border: 1px ;
+border-radius: 2px;
+background-color: black;
+color: white;
+
+font-size: 14px;
+text-align: center;
+font-weight: bold;
+border: 2px solid #ffd700;
+}
+#mm:hover{
+background-color:#a0a0a0 ;
+border: 2px solid #ffd700;
+color:  black;
+transform: scale(1.5);
+text-align: center;
+font-weight: bold;
+}
+
+ </style>
+</head>
+<body>
+
+<h1>Aby zobaczyć treść musisz się zalogować, lub utworzyć konto!</h1><br>
+  <h1>Forum</h1>
+  <a href="index.html"><img src="ii.png" style="height: 30px; width: 30px; background-color: white;" alt="Strona główna"></a>
+  <button id="mm" onclick="galeria()">Galeria</button>
+  <button  id="mm" onclick="zespol()" >Nasz zespół</button>
+  <div id="loginForm">
+    <h2>Logowanie</h2>
+    <label for="loginUsername">Nazwa użytkownika:</label>
+    <input type="text" id="loginUsername">
+    <br>
+    <label for="loginPassword">Hasło:</label>
+    <input type="password" id="loginPassword">
+    <br>
+    <button onclick="login() " id="mm">Zaloguj się</button>
+  </div>
+  
+  <div id="registerForm">
+    <h2>Rejestracja</h2>
+    <label for="registerUsername">Nazwa użytkownika:</label>
+    <input type="text" id="registerUsername">
+    <br>
+    <label for="registerPassword">Hasło:</label>
+    <input type="password" id="registerPassword">
+    <br>
+    <label for="registerEmail">Adres e-mail:</label>
+    <input type="email" id="registerEmail">
+    <br>
+    <label for="registerAge">Wiek:</label>
+    <input type="number" id="registerAge">
+    <br>
+    <button onclick="register()" id="mm">Załóż konto</button>
+  </div>
+
+  <div id="forumContent" style="display: none;">
+    <h2>Witaj, <span id="loggedInUsername"></span>!</h2>
+    <p>Przepraszamy, przerwa techniczna! Zapraszamy ponownie!</p>
+    <button onclick="logout()" id="mm">Wyloguj się</button>
+  </div>
+
+  <script>
+    function zespol(){
+    window.location.href = 'zespol.html';
+}
+
+function galeria(){
+    window.location.href = 'galeria.html';
+}
+    if (localStorage.getItem('loggedInUser')) {
+      showForumContent(localStorage.getItem('loggedInUser'));
+    } else {
+      showLoginForm();
+    }
+
+
+    function login() {
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const savedUser = localStorage.getItem(username);
+      if (savedUser && JSON.parse(savedUser).password === password) {
+        localStorage.setItem('loggedInUser', username);
+        showForumContent(username);
+      } else {
+        alert('Nieprawidłowe dane logowania.');
+      }
+    }
+
+
+    function register() {
+      const username = document.getElementById('registerUsername').value;
+      const password = document.getElementById('registerPassword').value;
+      const email = document.getElementById('registerEmail').value;
+      const age = document.getElementById('registerAge').value;
+
+  
+      if (localStorage.getItem(username)) {
+        alert('Użytkownik już istnieje. Wybierz inną nazwę użytkownika.');
+        return;
+      }
+
+      
+      const user = { username, password, email, age };
+      localStorage.setItem(username, JSON.stringify(user));
+
+      alert('Konto zostało utworzone. Możesz się teraz zalogować.');
+      showLoginForm();
+    }
+
+
+    function logout() {
+      localStorage.removeItem('loggedInUser');
+      showLoginForm();
+    }
+
+    function showLoginForm() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'block';
+      document.getElementById('forumContent').style.display = 'none';
+    }
+
+    function showForumContent(username) {
+      document.getElementById('loggedInUsername').textContent = username;
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('forumContent').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
